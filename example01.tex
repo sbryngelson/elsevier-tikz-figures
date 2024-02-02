@@ -1,0 +1,64 @@
+% !TeX root = example01.tex
+% !TeX program = xelatex
+\input{tikz_preamble}
+
+\begin{document}
+\pagestyle{empty}
+
+\begin{tikzpicture}[
+    fill between/on layer={
+    axis grid           % only ticks will be above filled area
+    },]
+	\begin{axis}[
+		standard,
+		set layers,
+		cell picture=true,
+		xlabel={$\Wi$},
+		ylabel={$\De$},
+		xmin=0,
+        xmax=3.5,
+		ymin=0,
+        ymax=0.2,
+		enlarge x limits=0.,
+        enlarge y limits=0.,
+		height=0.3\textwidth,
+		width=0.4\textwidth,
+        y tick label style={
+            /pgf/number format/.cd,
+            fixed,precision=2,/tikz/.cd
+        },
+		legend style={
+            at={(axis cs:0.1,0.19)},
+			anchor=north west,
+            legend columns=1,
+            transpose legend,
+            draw=none,
+            legend cell align=left,
+            fill=none
+        },
+		legend style={/tikz/every even column/.append style={column sep=-3.7cm}}
+		]
+		\addlegendimage{black,thick};
+		\addlegendimage{legend image code/.code={
+			\fill[RYB4!10] (0cm,-0.15cm) rectangle (0.6cm,0.085cm);
+			\draw[RYB4,thick,dashed] (0.03cm, 0.085cm) -- (0.6cm, 0.085cm);
+			}
+		};
+		
+		\path[name path=E]  (axis cs:\pgfkeysvalueof{/pgfplots/xmin},0)--(axis cs:\pgfkeysvalueof{/pgfplots/xmax},0);
+		\addplot+[RYB1,thick,domain=0:22,no markers,samples=20,name path global=A,forget plot] {0.315*x/4.60517};
+		\addplot+[RYB2,thick,domain=0:22,no markers,samples=20,name path global=B,forget plot] {0.315*x/6.90776};
+		\addplot+[RYB3,thick,domain=0:22,no markers,samples=20,name path global=D,forget plot] {0.315*x/23.0};
+
+		\addplot+[RYB4,dashed,thick,domain=0:22,no markers,samples=20,name path global=C,forget plot] {0.00638*x};
+		\addplot[RYB4!10] fill between[of=C and E];    				
+			
+		\node[rotate=43] at (axis cs:2,0.15) {\color{RYB1} $\Delta = 10^2$};
+		\node[rotate=31] at (axis cs:2.5,0.124) {\color{RYB2} $\Delta = 10^3$};
+		\node[rotate=11] at (axis cs:2.5,0.045) {\color{RYB3} $\Delta = 10^{10}$};
+
+		\legend{$\Delta = \textit{const.}$,$\eta_{100} \ge 10$}
+	\end{axis}
+\end{tikzpicture}
+
+\end{document}

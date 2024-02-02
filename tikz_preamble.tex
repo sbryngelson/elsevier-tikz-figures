@@ -1,0 +1,56 @@
+\documentclass{standalone}
+
+\usepackage{amsmath,amsfonts,amssymb,amsthm}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+\usepgfplotslibrary{fillbetween}
+\usepgfplotslibrary{groupplots}
+\usetikzlibrary{arrows}
+
+\usepackage{mathspec}
+\setmainfont[BoldFont=Gulliver-Bold,ItalicFont=Gulliver Italic]{Gulliver-Regular}
+\setmathrm{Gulliver Italic}
+\setmathfont(Digits){Gulliver-Regular}
+
+\setmathfont(Latin)[
+BoldFont=Gulliver-Bold,
+ItalicFont=Gulliver Italic,
+]{Gulliver}
+
+\input{math_symbols.tex}
+
+\textwidth = 6.5 in
+\textheight = 8 in
+
+\definecolor{RYB1}{RGB}{207, 37, 37}
+\definecolor{RYB2}{RGB}{37, 91, 207}
+\definecolor{RYB3}{RGB}{37, 207, 91}
+\definecolor{RYB4}{RGB}{163,26,145}
+\definecolor{RYB5}{RGB}{253, 180, 98}
+\definecolor{RYB6}{RGB}{179, 222, 105}
+\definecolor{RYB7}{RGB}{128, 177, 211}
+
+\pgfplotscreateplotcyclelist{newcolors}{
+    {RYB1,every mark/.append style={fill=RYB1,mark size={2.5}},mark=*},
+    {RYB2,every mark/.append style={fill=RYB2},mark=square*},
+    {RYB3,every mark/.append style={fill=RYB3,mark size={3}},mark=triangle*},
+    {RYB4,every mark/.append style={fill=RYB4,mark size={3}},mark=diamond*},
+    {RYB5,every mark/.append style={fill=RYB5,mark size={3}},mark=pentagon*},
+    {RYB6,every mark/.append style={fill=RYB6,mark size={4}},mark=10-pointed star},
+    {RYB7,every mark/.append style={fill=RYB7},mark=*},
+}
+
+\pgfplotsset{
+    standard/.style={
+        scale only axis,
+        width=0.5\textwidth,
+        enlarge x limits=0.05,
+        enlarge y limits=0.05,
+        max space between ticks=40,
+        cycle list name=newcolors,
+        every axis/.append style={font=\footnotesize},
+        every legend/.append style={font=\footnotesize},
+        every node/.append style={font=\footnotesize},
+	}
+}

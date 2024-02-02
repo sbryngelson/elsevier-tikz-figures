@@ -1,0 +1,62 @@
+% !TeX root = example06.tex
+% !TeX program = xelatex
+\input{tikz_preamble}
+
+\pgfplotsset{/pgfplots/group/every plot/.style={
+    title style={at={(0.5,-0.3)},
+        xshift=0pt,
+        yshift=21pt,
+        above}
+        }
+    }
+
+\begin{document}
+\pagestyle{empty}
+
+\begin{tikzpicture}
+    \begin{groupplot}[
+        group style = {group size = 1 by 2,vertical sep=0.5cm},
+        height = 10cm,
+        width = 6.5 in]
+
+    \nextgroupplot[standard,
+		clip=false,
+		title={\footnotesize (a) $\vbv_\eta$},
+		axis lines=none,
+		xticklabels={,,},
+        yticklabels={,,},
+		xmin=-1,
+        xmax=1,
+		ymin=-1,
+        ymax=1,
+		width=0.33\textwidth,
+		height=0.33\textwidth,
+		ticks=none,
+		]
+        \node[inner sep=0pt] at (axis cs:-0.1,-0.24) {\includegraphics[width=0.21\textwidth]{data/num_abscissa.png}};
+		\draw[very thick,latex-latex] (axis cs:-1.2,-0.6) -- (axis cs:-1.2,-1) -- (axis cs:-0.8,-1);
+		\node[above] at (axis cs:-1.2,-0.6) {$\hby$};
+		\node[right] at (axis cs:-0.8,-1) {$\hbz$};
+
+    \nextgroupplot[standard,
+		clip=false,
+		title={\footnotesize (b) $\vbv_\Delta$},
+		axis lines=none,
+		xticklabels={,,},
+        yticklabels={,,},
+		xmin=-1,
+        xmax=1,
+		ymin=-1,
+        ymax=1,
+		width=0.33\textwidth,
+		height=0.33\textwidth,
+		ticks=none,
+		]
+        \node[inner sep=0pt] at (axis cs:-0.1,-0.14) {\includegraphics[width=0.19\textwidth]{data/Delta_dist.png}};
+		\draw[very thick,latex-latex] (axis cs:-1.2,-0.6) -- (axis cs:-1.2,-1) -- (axis cs:-0.8,-1);
+		\node[above] at (axis cs:-1.2,-0.6) {$\hby$};
+		\node[right] at (axis cs:-0.8,-1) {$\hbx$};
+	\end{groupplot}
+\end{tikzpicture} 
+
+\end{document}
