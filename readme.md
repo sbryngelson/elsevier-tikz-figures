@@ -26,7 +26,7 @@ And here are more, with the source code available in this repo.:
 
 ### How to
 
-You need to compile the example0X.tex files in the repo. using XeLaTeX. The Gulliver fonts will need to be available on your machine (see above link).
+You need to compile the `example0X.tex` files in the repo. using XeLaTeX. The Gulliver fonts will need to be available on your machine (see above link).
 
 ### License
 
