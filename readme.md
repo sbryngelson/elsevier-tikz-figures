@@ -1,11 +1,16 @@
 ## Create Elsevier-style figures with XeLaTeX and TikZ/pgfplots
 
-Make your Elsevier journal article figures match the rest of your printed article via XeLaTeX and TikZ. Like this:
+Make your Elsevier journal article figures match the rest of your printed article via XeLaTeX and TikZ. 
+
+### Examples
+
+Here is an example:
+
 ![alt](example.png)
 
 Which is from [this paper](https://comp-physics.group/papers/bryngelson-EJM-19.pdf).
 
-Examples:
+And here are more, with the source code available in this repo.:
 * [example01.pdf](example01.pdf)
 * [example02.pdf](example02.pdf)
 * [example03.pdf](example03.pdf)
