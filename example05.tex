@@ -6,31 +6,31 @@
 \pagestyle{empty}
 
 \begin{tikzpicture} 
-	\begin{axis}[standard,
-		clip=false,
-		height=0.1\textwidth,
-		width=0.35\textwidth,
-		ymajorgrids,
-		enlarge x limits=0.0,
-		enlarge y limits=0.0,
-		ymin=0.6,
+    \begin{axis}[standard,
+        clip=false,
+        height=0.1\textwidth,
+        width=0.35\textwidth,
+        ymajorgrids,
+        enlarge x limits=0.0,
+        enlarge y limits=0.0,
+        ymin=0.6,
         ymax=3.4,
-		xmode=log,
-		xmin=1e-4,
-        xmax=1e4,		
-		ytick={1,2,3},
-		yticklabels={$| \rho_i | - 1$,$\eta_{1} - 1$,$\Delta$},
-		legend style={
-			at={(axis cs:-2,9)},anchor=south,legend columns=9,
-			draw=none,legend cell align=left,fill=none},
-		]
-		\draw (axis cs:0.001,0.6) -- (axis cs:0.001,3.4);
-		\node[above] at (axis cs:0.001,3.3) {$\delta$};
+        xmode=log,
+        xmin=1e-4,
+        xmax=1e4,       
+        ytick={1,2,3},
+        yticklabels={$| \rho_i | - 1$,$\eta_{1} - 1$,$\Delta$},
+        legend style={
+            at={(axis cs:-2,9)},anchor=south,legend columns=9,
+            draw=none,legend cell align=left,fill=none},
+        ]
+        \draw (axis cs:0.001,0.6) -- (axis cs:0.001,3.4);
+        \node[above] at (axis cs:0.001,3.3) {$\delta$};
 
-		\addplot+[RYB1,only marks] table{data/evals/Ca5_T10_spec.csv};
-		\addplot+[RYB2,only marks] (1.747,2);
-		\addplot+[RYB3,only marks] table{data/evals/Ca5_T10_X.csv};
-	\end{axis}
+        \addplot+[RYB1,only marks] table{data/evals/Ca5_T10_spec.csv};
+        \addplot+[RYB2,only marks] (1.747,2);
+        \addplot+[RYB3,only marks] table{data/evals/Ca5_T10_X.csv};
+    \end{axis}
 \end{tikzpicture}
 
 \end{document}
