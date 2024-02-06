@@ -1,6 +1,6 @@
 ## Create Elsevier-style figures with XeLaTeX and TikZ/pgfplots
 
-Make your Elsevier journal article figures match the rest of your printed article via XeLaTeX and TikZ. 
+Make your Elsevier journal article figures match the rest of your printed article via XeLaTeX and TikZ/pgfplots. 
 
 ### Examples
 
